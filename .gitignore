@@ -1,0 +1,17 @@
+/.vs/REST/v14/*.suo
+/Rest.Console/bin/Debug
+/Rest.Console/obj/Debug
+/Rest.Library/bin/Debug
+/Rest.Library/obj/Debug
+/Rest.Test/obj/Debug
+/Twilio.Library.Test/bin/Debug
+/Twilio.Library.Test/obj/Debug
+/packages/Microsoft.AspNet.WebApi.Client.5.2.3
+/packages/Microsoft.IdentityModel.Logging.1.1.2
+/packages/Microsoft.IdentityModel.Tokens.5.1.2
+/packages/Newtonsoft.Json.10.0.3
+/packages/System.IdentityModel.Tokens.Jwt.5.1.2
+/packages/Twilio.5.6.2
+/Rest.Test/bin/Debug
+
+/Rest.Library/*.user

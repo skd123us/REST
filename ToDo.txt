@@ -1,0 +1,2 @@
+X 8/19: Have InsertAsync return proper values
+X 8/19: Get the error and success objects
