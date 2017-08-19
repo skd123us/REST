@@ -3,7 +3,7 @@ using System.Net.Http;
 using System.Threading.Tasks;
 using System.Xml;
 
-namespace Rest.Library.Sms
+namespace OfficeClip.OpenSource.Integration.Rest.Library.Sms
 {
     public class Twilio
     {

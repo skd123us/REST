@@ -6,7 +6,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Web;
 
-namespace Rest.Library.Sms
+namespace OfficeClip.OpenSource.Integration.Rest.Library.Sms
 {
     public class TwilioMessage
     {

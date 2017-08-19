@@ -3,9 +3,8 @@ using System.Net.Http;
 using System.Net.Http.Headers;
 using System.Text;
 using System.Threading.Tasks;
-using Rest.Library.Sms;
 
-namespace Rest.Library
+namespace OfficeClip.OpenSource.Integration.Rest.Library
 {
     public class Rest
     {

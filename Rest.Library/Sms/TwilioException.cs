@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Rest.Library.Sms
+namespace OfficeClip.OpenSource.Integration.Rest.Library.Sms
 {
     public class TwilioException
     {

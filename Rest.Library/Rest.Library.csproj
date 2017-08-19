@@ -7,8 +7,8 @@
     <ProjectGuid>{CD3F33B6-0A86-4EDE-8BCA-AADA5FFBE5AF}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>Rest.Library</RootNamespace>
-    <AssemblyName>Rest.Library</AssemblyName>
+    <RootNamespace>OfficeClip.OpenSource.Integration.Rest.Library</RootNamespace>
+    <AssemblyName>OfficeClip.OpenSource.Integration.Rest.Library</AssemblyName>
     <TargetFrameworkVersion>v4.6</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
   </PropertyGroup>

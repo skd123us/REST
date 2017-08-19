@@ -3,9 +3,9 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using Rest.Library.Sms;
+using OfficeClip.OpenSource.Integration.Rest.Library.Sms;
 using System.Web;
-using Rest.Library;
+using OfficeClip.OpenSource.Integration.Rest.Library;
 
 namespace Rest.Console
 {

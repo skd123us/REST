@@ -1,4 +1,4 @@
-﻿namespace Rest.Library
+﻿namespace OfficeClip.OpenSource.Integration.Rest.Library
 {
     public class RestCredentialInfo
     {
