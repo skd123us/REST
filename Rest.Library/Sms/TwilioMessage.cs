@@ -25,9 +25,9 @@ namespace OfficeClip.OpenSource.Integration.Rest.Library.Sms
             return
                  string.Format(
                          "To={0}&From={1}&Body={2}",
-                         To.Replace("+", "%2B"),
-                         From.Replace("+", "%2B"),
-                         Message.Replace(" ", "+"));
+                         HttpUtility.UrlEncode(To),
+                         HttpUtility.UrlEncode(From),
+                         HttpUtility.UrlEncode(Message));
         }
 
         public void ReadFromConfiguration()
