@@ -82,6 +82,10 @@ namespace OfficeClip.OpenSource.Integration.Rest.Library.Sms
                                                                                         "TwilioResponse/Message/DateSent")
                                                                       .InnerText);
                     }
+                    twilioMessage.NumberOfSms = Convert.ToInt32(
+                                                         xmlDoc.SelectSingleNode(
+                                                                                 "TwilioResponse/Message/NumSegments")
+                                                               .InnerText);
                     twilioMessage.Direction = xmlDoc.SelectSingleNode(
                                                                       "TwilioResponse/Message/Direction").InnerText;
                     twilioMessage.Status = xmlDoc.SelectSingleNode(

@@ -19,6 +19,7 @@ namespace OfficeClip.OpenSource.Integration.Rest.Library.Sms
         public DateTime Updated { get; set; }
         public DateTime Sent { get; set; }
         public string Direction { get; set; }
+        public int NumberOfSms { get; set; }
         public TwilioException RestException { get; set; }
         public string ToMessageString()
         {
