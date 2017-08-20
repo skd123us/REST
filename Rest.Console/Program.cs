@@ -1,10 +1,5 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.Threading.Tasks;
 using OfficeClip.OpenSource.Integration.Rest.Library.Sms;
-using System.Web;
 using OfficeClip.OpenSource.Integration.Rest.Library;
 
 namespace Rest.Console
@@ -13,7 +8,15 @@ namespace Rest.Console
     {
         public static void Main(string[] args)
         {
-            SendMessage().Wait();
+            GetMessageInfo().Wait();
+        }
+
+        public static async Task<TwilioMessage> GetMessageInfo()
+        {
+            var smsInfo = new RestCredentialInfo();
+            smsInfo.ReadFromConfiguration();
+            var twilioMessage = await Twilio.GetMessage(smsInfo, "SM52ff57b14c4145478967d157bbf8d06a");
+            return twilioMessage;
         }
 
         public static async Task SendMessage()

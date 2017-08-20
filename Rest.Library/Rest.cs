@@ -32,5 +32,10 @@ namespace OfficeClip.OpenSource.Integration.Rest.Library
             content.Headers.ContentType = new MediaTypeHeaderValue("application/x-www-form-urlencoded");
             return await client.PostAsync(url, content);
         }
+
+        public async Task<HttpResponseMessage> GetAsync(string path)
+        {
+            return await client.GetAsync(path);
+        }
     }
 }
