@@ -33,8 +33,8 @@ namespace OfficeClip.OpenSource.Integration.Rest.Library.Sms
 
         public void ReadFromConfiguration()
         {
-            From = System.Configuration.ConfigurationManager.AppSettings["From"];
-            To = System.Configuration.ConfigurationManager.AppSettings["To"];
+            From = System.Configuration.ConfigurationManager.AppSettings["FromPhone"];
+            To = System.Configuration.ConfigurationManager.AppSettings["ToPhone"];
         }
 
     }

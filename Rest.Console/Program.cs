@@ -6,16 +6,19 @@ namespace Rest.Console
 {
     public class Program
     {
+        static TwilioMessage message;
         public static void Main(string[] args)
         {
+            //SendMessage().Wait();
             GetMessageInfo().Wait();
+
         }
 
         public static async Task<TwilioMessage> GetMessageInfo()
         {
             var smsInfo = new RestCredentialInfo();
             smsInfo.ReadFromConfiguration();
-            var twilioMessage = await Twilio.GetMessage(smsInfo, "SM52ff57b14c4145478967d157bbf8d06a");
+            var twilioMessage = await Twilio.GetMessage(smsInfo, "SM1e8208f4b4e44720bafc9ea0334eb72d");
             return twilioMessage;
         }
 
@@ -26,7 +29,7 @@ namespace Rest.Console
             twilioMessage.Message = "All in the game";           
             var smsInfo = new RestCredentialInfo();
             smsInfo.ReadFromConfiguration();
-            await Twilio.SendMessage(smsInfo, twilioMessage);
+            message = await Twilio.SendMessage(smsInfo, twilioMessage);
         }
     }
 }
