@@ -11,11 +11,11 @@ namespace Rest.Console
         public static void Main(string[] args)
         {
             //SendMessage().Wait();
-            GetMessageInfo().Wait();
-
+            //GetMessageInfo().Wait();
+            GetMailChimpLists().Wait();
         }
 
-        public static async Task<ListsInfo> GetTwilioLists()
+        public static async Task<ListsInfo> GetMailChimpLists()
         {
             var credential = new RestCredentialInfo();
             credential.ReadFromConfiguration();

@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Newtonsoft.Json;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -22,7 +23,9 @@ namespace OfficeClip.OpenSource.Integration.Rest.Library.MailChimp
             var response = await restCredential.GetAsync(
                                                     url);
             var responseContent = await response.Content.ReadAsStringAsync();
-            return null;
+            var fetch = JsonConvert.DeserializeObject<ListsInfo>(responseContent);
+            //var listsInfo = fetch.First();
+            return fetch;
         }
     }
 }
