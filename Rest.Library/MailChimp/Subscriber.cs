@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Newtonsoft.Json;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Net.Http;
@@ -41,13 +42,12 @@ namespace OfficeClip.OpenSource.Integration.Rest.Library.MailChimp
                 PostUrl,
                 restCredentialInfo.MailChimpLocation,
                listId);
-            var response = await restCredential.PostAsJsonAsync(
+            var stringContent = new StringContent(JsonConvert.SerializeObject(subscriberInfo));
+            var response = await restCredential.PostAsync(
                                     url,
-                                    subscriberInfo);
-            if (response.IsSuccessStatusCode)
-            {
+                                    stringContent);
+            var responseContent = await response.Content.ReadAsStringAsync();
 
-            }
             return null;
         }
     }
