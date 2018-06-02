@@ -12,7 +12,8 @@ namespace Rest.Console
         {
             //SendMessage().Wait();
             //GetMessageInfo().Wait();
-            GetMailChimpLists().Wait();
+            //GetMailChimpLists().Wait();
+            AddSubscriber().Wait();
         }
 
         public static async Task<ListsInfo> GetMailChimpLists()
@@ -23,22 +24,48 @@ namespace Rest.Console
             return lists;
         }
 
-        public static async Task<TwilioMessage> GetMessageInfo()
+        public static async Task<SubscriberInfo> AddSubscriber()
         {
-            var smsInfo = new RestCredentialInfo();
-            smsInfo.ReadFromConfiguration();
-            var twilioMessage = await Twilio.GetMessage(smsInfo, "SM1e8208f4b4e44720bafc9ea0334eb72d");
-            return twilioMessage;
+            var credential = new RestCredentialInfo();
+            credential.ReadFromConfiguration();
+            var subscriberInfo = new SubscriberInfo
+            {
+                EmailAddress = "kim.jung@koreanmail.com",
+                Status = "subscribed"
+            };
+            var mergeFieldInfo = new MergeFieldInfo();
+            mergeFieldInfo.FirstName = "Kim";
+            mergeFieldInfo.LastName = "Jung";
+            subscriberInfo.MergeFields = new MergeFieldInfo
+            {
+                FirstName = "Kim",
+                LastName = "Jung"
+            };
+            var result = await Subscriber.Subscribe(
+                                    credential,
+                                    subscriberInfo,
+                                    "Site Registration"
+                                    );
+            return result;
         }
+        
 
-        public static async Task SendMessage()
-        {
-            var twilioMessage = new TwilioMessage();
-            twilioMessage.ReadFromConfiguration();
-            twilioMessage.Message = "All in the game";           
-            var smsInfo = new RestCredentialInfo();
-            smsInfo.ReadFromConfiguration();
-            message = await Twilio.SendMessage(smsInfo, twilioMessage);
-        }
+    public static async Task<TwilioMessage> GetMessageInfo()
+    {
+        var smsInfo = new RestCredentialInfo();
+        smsInfo.ReadFromConfiguration();
+        var twilioMessage = await Twilio.GetMessage(smsInfo, "SM1e8208f4b4e44720bafc9ea0334eb72d");
+        return twilioMessage;
     }
+
+    public static async Task SendMessage()
+    {
+        var twilioMessage = new TwilioMessage();
+        twilioMessage.ReadFromConfiguration();
+        twilioMessage.Message = "All in the game";
+        var smsInfo = new RestCredentialInfo();
+        smsInfo.ReadFromConfiguration();
+        message = await Twilio.SendMessage(smsInfo, twilioMessage);
+    }
+}
 }

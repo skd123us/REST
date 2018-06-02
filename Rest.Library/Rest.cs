@@ -34,6 +34,14 @@ namespace OfficeClip.OpenSource.Integration.Rest.Library
             return await client.PostAsync(url, content);
         }
 
+        public async Task<HttpResponseMessage> PostAsJsonAsync(string url, object obj)
+        {
+            client.DefaultRequestHeaders.Accept.Add(
+                new MediaTypeWithQualityHeaderValue(
+                                        "application/json"));
+            return await client.PostAsJsonAsync(url, obj);
+        }
+
         public async Task<HttpResponseMessage> GetAsync(string path)
         {
             return await client.GetAsync(path);
